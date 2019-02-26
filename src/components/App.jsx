@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
-import GlobalStyle from './GlobalStyle';
-import Header from './Header';
-import Order from './Order';
-import Inventory from './Inventory';
+import React, { Fragment } from "react";
+import GlobalStyle from "./GlobalStyle";
+import Header from "./Header";
+import Order from "./Order";
+import Inventory from "./Inventory";
 
 const App = () => (
   <Fragment>
-    <div className='cotd'>
-      <div className='menu'>
-        <Header tagline='Fresh Seafood Market' />
+    <div className="cotd">
+      <div className="menu">
+        <Header tagline="Fresh Seafood Market" />
         <Order />
         <Inventory />
       </div>

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const NotFound = ({ location }) => (
   <div>
@@ -11,7 +11,7 @@ const NotFound = ({ location }) => (
 );
 
 NotFound.propTypes = {
-  location: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired
 };
 
 export default NotFound;

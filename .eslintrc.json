@@ -1,9 +1,6 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
   "env": {
     "browser": true
-  },
-  "rules": {
-    "jsx-quotes": ["error", "prefer-single"]
   }
 }
