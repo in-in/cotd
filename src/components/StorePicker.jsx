@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { getFunName } from '../helpers';
 
 const Title = styled.h2`
   font-style: italic;
@@ -13,6 +14,7 @@ const StorePicker = () => (
       required
       placeholder='Store Name'
       className='store__input'
+      defaultValue={getFunName()}
     />
     <button type='submit' className='store__submit'>
       Visit Store →
