@@ -39,7 +39,7 @@ const App = () => {
               addToOrder={addToOrder}
             />
           ))}
-          <Order />
+          <Order fishes={fishes} order={order} />
           <Inventory addFish={addFish} loadSampleFishes={loadSampleFishes} />
         </div>
       </div>

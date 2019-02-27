@@ -1,4 +1,4 @@
-const fishes = {
+const sampleFishes = {
   fish1: {
     name: "Pacific Halibut",
     image: "/images/hali.jpg",
@@ -80,4 +80,4 @@ const fishes = {
   }
 };
 
-export default fishes;
+export default sampleFishes;
