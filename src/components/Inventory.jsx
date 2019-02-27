@@ -1,9 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
+import AddForm from "./AddForm";
 
-const Inventory = () => (
+const Inventory = ({ addFish }) => (
   <div>
-    <p>Inventory</p>
+    <AddForm addFish={addFish} />
   </div>
 );
+
+Inventory.propTypes = {
+  addFish: PropTypes.func.isRequired
+};
 
 export default Inventory;
