@@ -1,4 +1,4 @@
-export const formatPrice2 = cents =>
+export const formatPrice = cents =>
   (cents / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
 
 export const rando = arr => arr[Math.floor(Math.random() * arr.length)];
