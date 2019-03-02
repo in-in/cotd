@@ -14,7 +14,9 @@ const App = ({
   }
 }) => {
   const [fishes, setFishes] = useState({});
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState(
+    JSON.parse(localStorage.getItem(storeId)) || {}
+  );
 
   const databaseRef = database.ref(`${storeId}/fishes`);
 
@@ -28,6 +30,10 @@ const App = ({
       databaseRef.off();
     };
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(storeId, JSON.stringify(order));
+  });
 
   const addFish = fish => {
     const newFishKey = database
