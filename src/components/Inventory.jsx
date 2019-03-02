@@ -1,9 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AddForm from "./AddForm";
+import EditForm from "./EditForm";
 
-const Inventory = ({ addFish, loadSampleFishes }) => (
-  <div>
+const Inventory = ({ addFish, updateFish, loadSampleFishes, fishes }) => (
+  <div className="inventory">
+    <h2>Inventory</h2>
+    {Object.keys(fishes).map(key => (
+      <EditForm
+        fish={fishes[key]}
+        key={key}
+        itemID={key}
+        updateFish={updateFish}
+      />
+    ))}
+
     <AddForm addFish={addFish} />
     <button type="button" onClick={loadSampleFishes}>
       Load Sample
@@ -13,7 +24,9 @@ const Inventory = ({ addFish, loadSampleFishes }) => (
 
 Inventory.propTypes = {
   addFish: PropTypes.func.isRequired,
-  loadSampleFishes: PropTypes.func.isRequired
+  updateFish: PropTypes.func.isRequired,
+  loadSampleFishes: PropTypes.func.isRequired,
+  fishes: PropTypes.objectOf(PropTypes.object).isRequired
 };
 
 export default Inventory;

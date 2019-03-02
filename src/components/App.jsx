@@ -45,6 +45,12 @@ const App = ({
     databaseRef.update(fishObject);
   };
 
+  const updateFish = (key, updatedFish) => {
+    const updateFishes = { ...fishes };
+    updateFishes[key] = updatedFish;
+    databaseRef.update(updateFishes);
+  };
+
   const loadSampleFishes = () => {
     sampleFishes.map(fish => addFish(fish));
   };
@@ -55,9 +61,14 @@ const App = ({
     setOrder(newOrder);
   };
 
+  // delete me
+  const containter = {
+    display: "flex"
+  };
+
   return (
     <Fragment>
-      <div className="cotd">
+      <div className="containter" style={containter}>
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           {Object.keys(fishes).map(key => (
@@ -68,9 +79,14 @@ const App = ({
               addToOrder={addToOrder}
             />
           ))}
-          <Order fishes={fishes} order={order} />
-          <Inventory addFish={addFish} loadSampleFishes={loadSampleFishes} />
         </div>
+        <Order fishes={fishes} order={order} />
+        <Inventory
+          addFish={addFish}
+          updateFish={updateFish}
+          loadSampleFishes={loadSampleFishes}
+          fishes={fishes}
+        />
       </div>
       <GlobalStyle />
     </Fragment>
