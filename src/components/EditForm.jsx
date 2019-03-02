@@ -5,7 +5,7 @@ const editForm = {
   backgroundColor: "dodgerblue"
 };
 
-const EditForm = ({ fish, updateFish, itemID }) => {
+const EditForm = ({ fish, updateFish, deleteFish, itemID }) => {
   const { available, desc, image, name, price } = fish;
 
   const handleChange = e => {
@@ -53,6 +53,9 @@ const EditForm = ({ fish, updateFish, itemID }) => {
         type="text"
         placeholder="Image"
       />
+      <button type="button" onClick={() => deleteFish(itemID)}>
+        Remove Fish
+      </button>
     </div>
   );
 };
@@ -66,6 +69,7 @@ EditForm.propTypes = {
     price: PropTypes.number
   }).isRequired,
   updateFish: PropTypes.func.isRequired,
+  deleteFish: PropTypes.func.isRequired,
   itemID: PropTypes.string.isRequired
 };
 

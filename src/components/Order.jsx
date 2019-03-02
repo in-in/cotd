@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { formatPrice } from "../helpers";
 
-const Order = ({ order, fishes }) => {
+const Order = ({ order, fishes, removeFromOrder }) => {
   const orderIds = Object.keys(order);
 
   const total = orderIds.reduce((prevTotal, key) => {
@@ -38,6 +38,9 @@ const Order = ({ order, fishes }) => {
           {fish.name}
         </span>
         <span>{formatPrice(count * fish.price)}</span>
+        <button type="button" onClick={() => removeFromOrder(key)}>
+          ⨯
+        </button>
       </li>
     );
   };
@@ -55,7 +58,8 @@ const Order = ({ order, fishes }) => {
 
 Order.propTypes = {
   order: PropTypes.objectOf(PropTypes.number).isRequired,
-  fishes: PropTypes.objectOf(PropTypes.object).isRequired
+  fishes: PropTypes.objectOf(PropTypes.object).isRequired,
+  removeFromOrder: PropTypes.func.isRequired
 };
 
 export default Order;

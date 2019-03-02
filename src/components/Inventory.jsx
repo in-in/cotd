@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import AddForm from "./AddForm";
 import EditForm from "./EditForm";
 
-const Inventory = ({ addFish, updateFish, loadSampleFishes, fishes }) => (
+const Inventory = ({
+  addFish,
+  updateFish,
+  deleteFish,
+  loadSampleFishes,
+  fishes
+}) => (
   <div className="inventory">
     <h2>Inventory</h2>
     {Object.keys(fishes).map(key => (
@@ -12,6 +18,7 @@ const Inventory = ({ addFish, updateFish, loadSampleFishes, fishes }) => (
         key={key}
         itemID={key}
         updateFish={updateFish}
+        deleteFish={deleteFish}
       />
     ))}
 
@@ -25,6 +32,7 @@ const Inventory = ({ addFish, updateFish, loadSampleFishes, fishes }) => (
 Inventory.propTypes = {
   addFish: PropTypes.func.isRequired,
   updateFish: PropTypes.func.isRequired,
+  deleteFish: PropTypes.func.isRequired,
   loadSampleFishes: PropTypes.func.isRequired,
   fishes: PropTypes.objectOf(PropTypes.object).isRequired
 };

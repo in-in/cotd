@@ -51,24 +51,35 @@ const App = ({
     databaseRef.update(updateFishes);
   };
 
+  const deleteFish = key => {
+    databaseRef.child(key).remove();
+  };
+
   const loadSampleFishes = () => {
     sampleFishes.map(fish => addFish(fish));
   };
 
   const addToOrder = key => {
-    const newOrder = { ...order };
-    newOrder[key] = newOrder[key] + 1 || 1;
-    setOrder(newOrder);
+    const addOrder = { ...order };
+    addOrder[key] = addOrder[key] + 1 || 1;
+    setOrder(addOrder);
   };
 
-  // delete me
-  const containter = {
+  const removeFromOrder = key => {
+    const removeOrder = { ...order };
+    delete removeOrder[key];
+    setOrder(removeOrder);
+  };
+
+  // FOR TEST
+  // DELETE ME!!!
+  const container = {
     display: "flex"
   };
 
   return (
     <Fragment>
-      <div className="containter" style={containter}>
+      <div className="container" style={container}>
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           {Object.keys(fishes).map(key => (
@@ -80,10 +91,15 @@ const App = ({
             />
           ))}
         </div>
-        <Order fishes={fishes} order={order} />
+        <Order
+          fishes={fishes}
+          order={order}
+          removeFromOrder={removeFromOrder}
+        />
         <Inventory
           addFish={addFish}
           updateFish={updateFish}
+          deleteFish={deleteFish}
           loadSampleFishes={loadSampleFishes}
           fishes={fishes}
         />
