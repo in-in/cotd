@@ -1,5 +1,5 @@
-const sampleFishes = {
-  fish1: {
+const sampleFishes = [
+  {
     name: "Pacific Halibut",
     image: "/images/hali.jpg",
     desc:
@@ -7,8 +7,7 @@ const sampleFishes = {
     price: 1724,
     available: true
   },
-
-  fish2: {
+  {
     name: "Lobster",
     image: "/images/lobster.jpg",
     desc:
@@ -16,8 +15,7 @@ const sampleFishes = {
     price: 3200,
     available: true
   },
-
-  fish3: {
+  {
     name: "Sea Scallops",
     image: "/images/scallops.jpg",
     desc:
@@ -25,8 +23,7 @@ const sampleFishes = {
     price: 1684,
     available: false
   },
-
-  fish4: {
+  {
     name: "Mahi Mahi",
     image: "/images/mahi.jpg",
     desc:
@@ -34,8 +31,7 @@ const sampleFishes = {
     price: 1129,
     available: true
   },
-
-  fish5: {
+  {
     name: "King Crab",
     image: "/images/crab.jpg",
     desc:
@@ -43,8 +39,7 @@ const sampleFishes = {
     price: 4234,
     available: true
   },
-
-  fish6: {
+  {
     name: "Atlantic Salmon",
     image: "/images/salmon.jpg",
     desc:
@@ -52,16 +47,14 @@ const sampleFishes = {
     price: 1453,
     available: true
   },
-
-  fish7: {
+  {
     name: "Oysters",
     image: "/images/oysters.jpg",
     desc: "A soft plump oyster with a sweet salty flavor and a clean finish.",
     price: 2543,
     available: true
   },
-
-  fish8: {
+  {
     name: "Mussels",
     image: "/images/mussels.jpg",
     desc:
@@ -69,8 +62,7 @@ const sampleFishes = {
     price: 425,
     available: true
   },
-
-  fish9: {
+  {
     name: "Jumbo Prawns",
     image: "/images/prawns.jpg",
     desc:
@@ -78,6 +70,6 @@ const sampleFishes = {
     price: 2250,
     available: true
   }
-};
+];
 
 export default sampleFishes;
