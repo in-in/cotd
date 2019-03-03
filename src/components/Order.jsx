@@ -22,20 +22,13 @@ const Order = ({ order, fishes, removeFromOrder }) => {
     if (!fish) return null;
 
     if (!fish.available) {
-      return (
-        <li>
-          Sorry
-          {fish ? fish.name : "fish"}
-          is no longer available
-        </li>
-      );
+      return <li>Sorry {fish ? fish.name : "fish"} is no longer available</li>;
     }
     return (
       <li key={key}>
         <span>
           {count}
-          lbs
-          {fish.name}
+          lbs {fish.name}
         </span>
         <span>{formatPrice(count * fish.price)}</span>
         <button type="button" onClick={() => removeFromOrder(key)}>
