@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import GlobalStyle from "./GlobalStyle";
-import Header from "./Header";
+import Header from "./header/Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import Fish from "./Fish";
@@ -71,15 +70,9 @@ const App = ({
     setOrder(removeOrder);
   };
 
-  // FOR TEST
-  // DELETE ME!!!
-  const container = {
-    display: "flex"
-  };
-
   return (
     <Fragment>
-      <div className="container" style={container}>
+      <div className="container">
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           {Object.keys(fishes).map(key => (
@@ -104,7 +97,6 @@ const App = ({
           fishes={fishes}
         />
       </div>
-      <GlobalStyle />
     </Fragment>
   );
 };
