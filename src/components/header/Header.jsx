@@ -19,7 +19,7 @@ const Title = styled.h1`
   line-height: 1.3;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #222;
+  color: var(--color_dark);
 `;
 
 const TitleCenter = styled.div`
@@ -31,7 +31,7 @@ const TitleCenter = styled.div`
 
 const StyledLogo = styled(Logo)`
   width: 100%;
-  fill: #222;
+  fill: var(--color_dark);
 `;
 
 const TitleSideText = styled.span`
@@ -43,7 +43,7 @@ const TitleSideText = styled.span`
   font-size: 0.16em;
   ${props => (props.right ? "" : "text-align: right")};
   letter-spacing: normal;
-  color: #e31b18;
+  color: var(--color_accent);
 `;
 
 const Tagline = styled.h3`
@@ -55,7 +55,7 @@ const Tagline = styled.h3`
   font-weight: 200;
   text-transform: uppercase;
   line-height: 1.3;
-  color: #e31b18;
+  color: var(--color_accent);
 
   ::before,
   ::after {
@@ -63,8 +63,8 @@ const Tagline = styled.h3`
     width: 1em;
     height: 0.1em;
     margin-top: -0.1em;
-    border-top: 0.05em solid #222;
-    border-bottom: 0.05em solid #222;
+    border-top: 0.05em solid var(--color_dark);
+    border-bottom: 0.05em solid var(--color_dark);
   }
 `;
 

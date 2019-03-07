@@ -18,7 +18,14 @@ const GlobalStyle = createGlobalStyle`
     src: url(${SourceSansVariableRoman}) format('woff2-variations')
   }
 
+  :root {
+    --color_dark: #222;
+    --color_accent: #e31b18;
+    --bg_white: #f4f4f4;
+  }
+
   body {
+    background-color: var(--bg_white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
