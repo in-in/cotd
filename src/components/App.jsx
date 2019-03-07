@@ -1,5 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import Container from "./Container";
 import Header from "./header/Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
@@ -71,8 +72,8 @@ const App = ({
   };
 
   return (
-    <Fragment>
-      <div className="container">
+    <Container
+      menu={
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           {Object.keys(fishes).map(key => (
@@ -84,11 +85,15 @@ const App = ({
             />
           ))}
         </div>
+      }
+      order={
         <Order
           fishes={fishes}
           order={order}
           removeFromOrder={removeFromOrder}
         />
+      }
+      inventory={
         <Inventory
           addFish={addFish}
           updateFish={updateFish}
@@ -96,8 +101,8 @@ const App = ({
           loadSampleFishes={loadSampleFishes}
           fishes={fishes}
         />
-      </div>
-    </Fragment>
+      }
+    />
   );
 };
 
