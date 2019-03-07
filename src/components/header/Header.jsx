@@ -39,9 +39,9 @@ const TitleSideText = styled.span`
   ${props => (props.right ? "right: 0" : "left: 0")};
   box-sizing: border-box;
   width: 50%;
-  ${props => (props.right ? "padding-left: 0.5ch" : "padding-right: 1ch")};
-  font-size: 0.16em;
-  ${props => (props.right ? "" : "text-align: right")};
+  ${props => (props.right ? "padding-left: 0.3em" : "padding-right: 0.3em")};
+  font-size: 0.15em;
+  text-align: center;
   letter-spacing: normal;
   color: var(--color_accent);
 `;
