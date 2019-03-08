@@ -1,3 +1,23 @@
+import { css } from "styled-components";
+
+const sizes = {
+  xs: 320,
+  s: 480,
+  m: 640,
+  l: 800,
+  xl: 1000,
+  xxl: 1200
+};
+
+export const mq = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${sizes[label]}px) {
+      ${css(...args)}
+    }
+  `;
+  return acc;
+}, {});
+
 export const formatPrice = cents =>
   (cents / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
 
