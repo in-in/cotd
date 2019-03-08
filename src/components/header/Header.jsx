@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
 import { ReactComponent as Logo } from "./anchor.svg";
+import { breakpoints } from "../../helpers";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -15,7 +16,12 @@ const Title = styled.h1`
   align-items: flex-start;
   margin: 0;
   font-family: "Source Serif Pro", serif;
-  font-size: ${between("40px", "100px", "320px", "1280px")};
+  font-size: ${between(
+    "35px",
+    "65px",
+    `${breakpoints.xs}px`,
+    `${breakpoints.xxl}px`
+  )};
   line-height: 1.3;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -51,7 +57,12 @@ const Tagline = styled.h3`
   display: flex;
   align-items: center;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: ${between("20px", "50px", "320px", "1280px")};
+  font-size: ${between(
+    "17px",
+    "28px",
+    `${breakpoints.xs}px`,
+    `${breakpoints.xxl}px`
+  )};
   font-weight: 200;
   text-transform: uppercase;
   line-height: 1.3;

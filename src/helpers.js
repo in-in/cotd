@@ -1,17 +1,17 @@
 import { css } from "styled-components";
 
-const sizes = {
+export const breakpoints = {
   xs: 320,
   s: 480,
   m: 640,
   l: 768,
   xl: 960,
-  xxl: 1200
+  xxl: 1280
 };
 
-export const mq = Object.keys(sizes).reduce((acc, label) => {
+export const mq = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (min-width: ${sizes[label]}px) {
+    @media (min-width: ${breakpoints[label]}px) {
       ${css(...args)}
     }
   `;
