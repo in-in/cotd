@@ -22,10 +22,11 @@ const GlobalStyle = createGlobalStyle`
     --color_dark: #222;
     --color_accent: #e31b18;
     --bg_white: #f4f4f4;
+    --bg_main: #76d4d6;
   }
 
   body {
-    background-color: var(--bg_white);
+    background-color: var(--bg_main);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
