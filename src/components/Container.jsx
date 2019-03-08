@@ -1,35 +1,48 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { mq } from "../helpers";
 
 const StyledContainer = styled.main`
-  background-color: tan;
   display: grid;
-  grid-template-columns: [menu] 2fr [order] 1fr [inventory] 2fr;
-  grid-column-gap: 1em;
-  height: calc(100vh - 2rem);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "menu"
+    "order"
+    "inventory";
+  grid-gap: 1em;
   padding: 1em;
+
+  ${mq.l`
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "menu menu order"
+      "inventory inventory inventory";
+  `}
+
+  ${mq.xxl`
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-areas: "menu order inventory";
+  `}
 `;
 
 const ContainerItem = styled.section`
+  max-height: calc(100vh - 5em);
   padding: 1em;
   border: 0.5em double var(--color_dark);
   overflow-x: hidden;
 `;
 
 const Menu = styled(ContainerItem)`
-  background-color: lightblue;
-  grid-column: menu;
+  grid-area: menu;
 `;
 
 const Order = styled(ContainerItem)`
-  background-color: lightcoral;
-  grid-column: order;
+  grid-area: order;
 `;
 
 const Inventory = styled(ContainerItem)`
-  background-color: lightgreen;
-  grid-column: inventory;
+  grid-area: inventory;
 `;
 
 const Container = ({ menu, order, inventory }) => (
