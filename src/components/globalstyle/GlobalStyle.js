@@ -26,9 +26,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: var(--bg_main);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        var(--bg_white),
+        var(--bg_white) 3em,
+        var(--bg_main) 3em,
+        var(--bg_main) 7em)
   }
 `;
 

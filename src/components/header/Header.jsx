@@ -56,7 +56,6 @@ const Tagline = styled.h3`
   margin: 0;
   display: flex;
   align-items: center;
-  font-family: "Source Sans Pro", sans-serif;
   font-size: ${between(
     "17px",
     "28px",
