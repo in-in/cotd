@@ -31,6 +31,7 @@ const ContainerItem = styled.section`
   padding: 1em;
   border: 0.5em double var(--color_dark);
   overflow-x: hidden;
+  background-color: rgba(244, 244, 244, 0.8);
 `;
 
 const Menu = styled(ContainerItem)`
