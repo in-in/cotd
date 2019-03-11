@@ -4,7 +4,7 @@ import Container from "./Container";
 import Header from "./header/Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
-import Fish from "./Fish";
+import Card from "./Card";
 import sampleFishes from "../sample-fishes";
 import database from "../database";
 
@@ -76,14 +76,16 @@ const App = ({
       menu={
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
-          {Object.keys(fishes).map(key => (
-            <Fish
-              key={key}
-              index={key}
-              details={fishes[key]}
-              addToOrder={addToOrder}
-            />
-          ))}
+          <ul>
+            {Object.keys(fishes).map(key => (
+              <Card
+                key={key}
+                index={key}
+                details={fishes[key]}
+                addToOrder={addToOrder}
+              />
+            ))}
+          </ul>
         </div>
       }
       order={

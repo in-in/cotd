@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
+    color: var(--color_dark);
     background-image:
       repeating-linear-gradient(
         -45deg,
@@ -37,6 +38,17 @@ const GlobalStyle = createGlobalStyle`
         var(--bg_white) 3em,
         var(--bg_main) 3em,
         var(--bg_main) 7em)
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
   }
 `;
 
