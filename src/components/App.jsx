@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Container from "./Container";
 import Header from "./header/Header";
@@ -74,7 +74,7 @@ const App = ({
   return (
     <Container
       menu={
-        <div className="menu">
+        <Fragment>
           <Header tagline="Fresh Seafood Market" />
           <ul>
             {Object.keys(fishes).map(key => (
@@ -86,7 +86,7 @@ const App = ({
               />
             ))}
           </ul>
-        </div>
+        </Fragment>
       }
       order={
         <Order
