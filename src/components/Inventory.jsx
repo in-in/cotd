@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import AddForm from "./AddForm";
 import EditForm from "./EditForm";
+import Title from "./Title";
 
 const Inventory = ({
   addFish,
@@ -11,7 +12,7 @@ const Inventory = ({
   fishes
 }) => (
   <div className="inventory">
-    <h2>Inventory</h2>
+    <Title>Inventory</Title>
     {Object.keys(fishes).map(key => (
       <EditForm
         fish={fishes[key]}

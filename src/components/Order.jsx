@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Title from "./Title";
 import { formatPrice } from "../helpers";
 
 const Order = ({ order, fishes, removeFromOrder }) => {
@@ -40,7 +41,7 @@ const Order = ({ order, fishes, removeFromOrder }) => {
 
   return (
     <div className="order-wrap">
-      <h2>Order</h2>
+      <Title>Order</Title>
       <ul>{orderIds.map(renderOrderItem)}</ul>
       <div className="total">
         <strong>{formatPrice(total)}</strong>
