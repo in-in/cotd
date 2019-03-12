@@ -6,13 +6,17 @@ import { formatPrice, breakpoints, mq, imagePath } from "../helpers";
 
 const StyledCard = styled.li`
   list-style: none;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   font-size: ${between(
     "16px",
     "20px",
     `${breakpoints.xs}px`,
     `${breakpoints.s}px`
   )};
+  border-bottom: 2px solid var(--color_dark);
+  border-top: 1px solid var(--color_dark);
 
   :last-child {
     margin-bottom: 0;

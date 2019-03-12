@@ -9,6 +9,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1em;
 `;
 
 const Title = styled.h1`
