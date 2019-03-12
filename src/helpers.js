@@ -18,6 +18,9 @@ export const mq = Object.keys(breakpoints).reduce((acc, label) => {
   return acc;
 }, {});
 
+export const imagePath = (name, size, dpi) =>
+  `/images/${name}_${size}${dpi ? `_@${dpi}x` : ""}.jpg`;
+
 export const formatPrice = cents =>
   (cents / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
 

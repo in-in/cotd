@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
-import { formatPrice, breakpoints, mq } from "../helpers";
+import { formatPrice, breakpoints, mq, imagePath } from "../helpers";
 
 const StyledCard = styled.li`
   list-style: none;
@@ -149,25 +149,38 @@ const Card = ({ details, addToOrder, index }) => {
     <StyledCard>
       <Picture>
         <source
-          srcSet="https://satyr.io/181x4:3/?texture=cross&?type=png 1x, slide1_1744@2x.jpg 2x, slide1_2616@3x.jpg 3x"
-          media={`(min-width:${breakpoints.xxl}px)`}
+          srcSet={`
+            ${imagePath(image, "s")} 1x,
+            ${imagePath(image, "s", 2)} 2x,
+            ${imagePath(image, "s", 3)} 3x
+          `}
+          media={`(min-width: ${breakpoints.xxl}px)`}
         />
         <source
-          srcSet="https://satyr.io/300x4:3/?texture=cross&?type=png 1x, slide1_1640@2x.jpg 2x, slide1_2460@3x.jpg 3x"
-          media={`(min-width:${breakpoints.xl}px)`}
+          srcSet={`
+            ${imagePath(image, "m")} 1x,
+            ${imagePath(image, "m", 2)} 2x,
+            ${imagePath(image, "m", 3)} 3x
+          `}
+          media={`(min-width: ${breakpoints.xl}px)`}
         />
         <source
-          srcSet="https://satyr.io/181x4:3/?texture=cross&?type=png 1x, slide1_1438@2x.jpg 2x, slide1_2157@3x.jpg 3x"
-          media={`(min-width:${breakpoints.s}px)`}
+          srcSet={`
+            ${imagePath(image, "s")} 1x,
+            ${imagePath(image, "s", 2)} 2x,
+            ${imagePath(image, "s", 3)} 3x
+          `}
+          media={`(min-width: ${breakpoints.s}px)`}
         />
         <source
-          srcSet="https://satyr.io/300x4:3/?texture=cross&?type=png 1x, slide1_600@2x.jpg 2x, slide1_900@3x.jpg 3x"
-          media={`(min-width:${breakpoints.xs}px)`}
+          srcSet={`
+            ${imagePath(image, "m")} 1x,
+            ${imagePath(image, "m", 2)} 2x,
+            ${imagePath(image, "m", 3)} 3x
+          `}
+          media={`(min-width: ${breakpoints.xs}px)`}
         />
-        <img
-          src="https://satyr.io/300x4:3/?texture=cross&?type=png"
-          alt={name}
-        />
+        <img src={imagePath(image, "m")} alt={name} />
       </Picture>
       <Content>
         <Header>
