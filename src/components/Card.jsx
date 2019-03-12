@@ -47,6 +47,7 @@ const Header = styled.div`
 `;
 
 const Content = styled.div`
+  position: relative;
   width: 100%;
 `;
 
@@ -102,28 +103,40 @@ const Picture = styled.picture`
 `;
 
 const Button = styled.button`
-  position: relative;
+  position: ${props => (props.disabled ? "absolute" : "relative")};
+  ${props => (props.disabled ? "top: 50%" : "")};
+  ${props => (props.disabled ? "left: 50%" : "")};
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3em 0.6em;
+  padding-top: 0.3em;
+  padding-bottom: 0.1em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
   background: none;
   appearance: none;
-  cursor: pointer;
+  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
   font-weight: 700;
-  color: var(--color_dark);
-  border: 1px solid var(--color_dark);
+  color: ${props =>
+    props.disabled ? "var(--color_accent)" : "var(--color_dark)"};
+  border: 1px solid;
+  border-color: ${props =>
+    props.disabled ? "var(--color_accent)" : "var(--color_dark)"};
   background-color: var(--bg_white);
   text-transform: uppercase;
-  transform: perspective(1px) translateZ(0);
+  transform: ${props =>
+    props.disabled
+      ? "translate(-50%, -50%) scale(1.5) rotate(-15deg)"
+      : "perspective(1px) translateZ(0)"};
   overflow: hidden;
+  line-height: 1;
 
   ${mq.s`
     margin-left: auto
   `}
 
   ::before {
-    content: "";
+    ${props => (props.disabled ? "" : "content: ''")};
     position: absolute;
     z-index: -1;
     top: 0;
