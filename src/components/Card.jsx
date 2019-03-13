@@ -53,6 +53,8 @@ const Header = styled.div`
 const Content = styled.div`
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Name = styled.h3`
@@ -136,7 +138,8 @@ const Button = styled.button`
   line-height: 1;
 
   ${mq.s`
-    margin-left: auto
+    margin-top: auto;
+    margin-left: auto;
   `}
 
   ::before {

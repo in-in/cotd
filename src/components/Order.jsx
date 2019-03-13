@@ -5,10 +5,6 @@ import { between } from "polished";
 import Title from "./Title";
 import { formatPrice, breakpoints, mq } from "../helpers";
 
-const List = styled.ul`
-  list-style: none;
-`;
-
 const Item = styled.li`
   display: flex;
   align-items: baseline;
@@ -129,7 +125,7 @@ const Order = ({ order, fishes, removeFromOrder }) => {
   return (
     <Fragment>
       <Title>Order</Title>
-      <List>{orderIds.map(renderOrderItem)}</List>
+      <ul>{orderIds.map(renderOrderItem)}</ul>
       <Total>
         <span>Total: </span>
         <strong>{formatPrice(total)}</strong>
