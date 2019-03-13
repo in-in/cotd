@@ -1,7 +1,92 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import { between } from "polished";
 import Title from "./Title";
-import { formatPrice } from "../helpers";
+import { formatPrice, breakpoints, mq } from "../helpers";
+
+const List = styled.ul`
+  list-style: none;
+`;
+
+const Item = styled.li`
+  display: flex;
+  align-items: baseline;
+  padding-top: 1em;
+  padding-bottom: 0.8em;
+  list-style: none;
+  font-size: ${between(
+    "16px",
+    "20px",
+    `${breakpoints.xs}px`,
+    `${breakpoints.l}px`
+  )};
+  border-bottom: 1px solid;
+
+  ${mq.l`
+    font-size: ${between(
+      "14px",
+      "16px",
+      `${breakpoints.l}px`,
+      `${breakpoints.xxl}px`
+    )};
+  `}
+`;
+
+const Count = styled.span`
+  margin-right: 1em;
+  font-weight: 600;
+`;
+
+const Price = styled.span`
+  max-width: 30%;
+  min-width: 23%;
+  margin-left: auto;
+  font-size: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+`;
+
+const Name = styled.span`
+  margin-right: 0.5em;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const Button = styled.button`
+  display: none;
+  margin-right: 0.5em;
+  padding: 0;
+  background: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color_accent);
+
+  ${Item}:hover & {
+    display: block;
+  }
+`;
+
+const Total = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+  padding-bottom: 0.8em;
+  font-size: ${between(
+    "20px",
+    "24px",
+    `${breakpoints.xs}px`,
+    `${breakpoints.xxl}px`
+  )};
+  font-weight: 700;
+  border-bottom: 3px solid;
+  border-top: 3px double;
+`;
 
 const Order = ({ order, fishes, removeFromOrder }) => {
   const orderIds = Object.keys(order);
@@ -23,30 +108,33 @@ const Order = ({ order, fishes, removeFromOrder }) => {
     if (!fish) return null;
 
     if (!fish.available) {
-      return <li>Sorry {fish ? fish.name : "fish"} is no longer available</li>;
+      return (
+        <Item>Sorry {fish ? fish.name : "fish"} is no longer available</Item>
+      );
     }
     return (
-      <li key={key}>
-        <span>
-          {count}
-          lbs {fish.name}
-        </span>
-        <span>{formatPrice(count * fish.price)}</span>
-        <button type="button" onClick={() => removeFromOrder(key)}>
+      <Item key={key}>
+        <Count>{count}lbs </Count>
+        <Name title={fish.name}>{fish.name}</Name>
+        <Button type="button" onClick={() => removeFromOrder(key)}>
           ⨯
-        </button>
-      </li>
+        </Button>
+        <Price title={formatPrice(count * fish.price)}>
+          {formatPrice(count * fish.price)}
+        </Price>
+      </Item>
     );
   };
 
   return (
-    <div className="order-wrap">
+    <Fragment>
       <Title>Order</Title>
-      <ul>{orderIds.map(renderOrderItem)}</ul>
-      <div className="total">
+      <List>{orderIds.map(renderOrderItem)}</List>
+      <Total>
+        <span>Total: </span>
         <strong>{formatPrice(total)}</strong>
-      </div>
-    </div>
+      </Total>
+    </Fragment>
   );
 };
 
