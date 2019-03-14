@@ -1,9 +1,76 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import { between } from "polished";
+import { breakpoints, mq } from "../helpers";
 
-const editForm = {
-  backgroundColor: "dodgerblue"
-};
+const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  border: 1px solid;
+  font-size: ${between(
+    "16px",
+    "20px",
+    `${breakpoints.xs}px`,
+    `${breakpoints.xl}px`
+  )};
+
+  ${mq.l`
+    flex-direction: row;
+    flex-wrap: wrap;
+  `}
+
+  ${mq.xxl`
+    font-size: 1em;
+  `}
+`;
+
+const StyledInput = styled.input`
+  padding: 0.5em;
+  box-sizing: border-box;
+  background-color: var(--bg_white);
+  border: 1px solid;
+  color: var(--color_dark);
+  font-size: inherit;
+
+  :focus {
+    background-color: #d8f3f3;
+  }
+
+  ${mq.l`
+    width: 25%;
+  `}
+`;
+
+const Input = styled(StyledInput).attrs(({ placeholder }) => ({
+  type: "text",
+  placeholder,
+  name: placeholder.toLowerCase()
+}))``;
+
+const Select = styled(StyledInput)`
+  appearance: none;
+`;
+
+const Textarea = styled(StyledInput)`
+  resize: none;
+
+  ${mq.l`
+    width: 100%;
+  `}
+`;
+
+const Button = styled.button`
+  background-color: var(--bg_white);
+  appearance: none;
+  border: 1px solid;
+  cursor: pointer;
+
+  ${mq.l`
+    width: 100%;
+  `}
+`;
 
 const EditForm = ({ fish, updateFish, deleteFish, itemID }) => {
   const { available, desc, image, name, price } = fish;
@@ -21,42 +88,34 @@ const EditForm = ({ fish, updateFish, deleteFish, itemID }) => {
   };
 
   return (
-    <div className="edit-form" style={editForm}>
-      <input
-        name="name"
+    <Form>
+      <Input placeholder="Name" value={name} onChange={handleChange} />
+      <Input placeholder="Price" value={price} onChange={handleChange} />
+      <Input placeholder="Image" value={image} onChange={handleChange} />
+
+      <Select
+        as="select"
+        name="status"
         onChange={handleChange}
-        value={name}
-        type="text"
-        placeholder="Name"
-      />
-      <input
-        name="price"
-        onChange={handleChange}
-        value={price}
-        type="text"
-        placeholder="Price"
-      />
-      <select name="status" onChange={handleChange} value={available}>
+        value={available}
+      >
         <option value="available">Fresh!</option>
         <option value="unavailable">Sold Out!</option>
-      </select>
-      <textarea
+      </Select>
+
+      <Textarea
+        as="textarea"
+        rows="3"
         name="desc"
         onChange={handleChange}
         value={desc}
-        placeholder="Desc"
+        placeholder="Description"
       />
-      <input
-        name="image"
-        onChange={handleChange}
-        value={image}
-        type="text"
-        placeholder="Image"
-      />
-      <button type="button" onClick={() => deleteFish(itemID)}>
+
+      <Button type="button" onClick={() => deleteFish(itemID)}>
         Remove Fish
-      </button>
-    </div>
+      </Button>
+    </Form>
   );
 };
 
