@@ -1,6 +1,8 @@
-import { css } from "styled-components";
+import styled from "styled-components";
 
-const StyledButton = css`
+const DefaultButton = styled.button.attrs({
+  type: "button"
+})`
   position: ${props => (props.disabled ? "absolute" : "relative")};
   ${props => (props.disabled ? "top: 50%" : "")};
   ${props => (props.disabled ? "left: 50%" : "")};
@@ -49,4 +51,4 @@ const StyledButton = css`
   }
 `;
 
-export default StyledButton;
+export default DefaultButton;

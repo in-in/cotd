@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
-import StyledButton from "./Button";
+import DefaultButton from "./DefaultButton";
 import { formatPrice, breakpoints, mq, imagePath } from "../helpers";
 
 const StyledCard = styled.li`
@@ -109,9 +109,7 @@ const Picture = styled.picture`
   }
 `;
 
-const Button = styled.button`
-  ${StyledButton}
-
+const Button = styled(DefaultButton)`
   ${mq.s`
     margin-top: auto;
     margin-left: auto;
@@ -164,11 +162,7 @@ const Card = ({ details, addToOrder, index }) => {
           <Price title={formatPrice(price)}>{formatPrice(price)}</Price>
         </Header>
         <Description>{desc}</Description>
-        <Button
-          type="button"
-          disabled={!available}
-          onClick={() => addToOrder(index)}
-        >
+        <Button disabled={!available} onClick={() => addToOrder(index)}>
           {available ? "Add to Order" : "Sold Out!"}
         </Button>
       </Content>

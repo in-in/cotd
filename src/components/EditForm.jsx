@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
-import StyledButton from "./Button";
 import { breakpoints, mq } from "../helpers";
+import DefaultButton from "./DefaultButton";
 
 const Form = styled.div`
   display: flex;
@@ -62,9 +62,7 @@ const Textarea = styled(StyledInput)`
   `}
 `;
 
-const Button = styled.button`
-  ${StyledButton}
-
+const Button = styled(DefaultButton)`
   ${mq.l`
     width: 100%;
   `}
@@ -110,9 +108,7 @@ const EditForm = ({ fish, updateFish, deleteFish, itemID }) => {
         placeholder="Description"
       />
 
-      <Button type="button" onClick={() => deleteFish(itemID)}>
-        Remove Fish
-      </Button>
+      <Button onClick={() => deleteFish(itemID)}>Remove Fish</Button>
     </Form>
   );
 };
