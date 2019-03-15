@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
+import StyledButton from "./Button";
 import { formatPrice, breakpoints, mq, imagePath } from "../helpers";
 
 const StyledCard = styled.li`
@@ -109,57 +110,12 @@ const Picture = styled.picture`
 `;
 
 const Button = styled.button`
-  position: ${props => (props.disabled ? "absolute" : "relative")};
-  ${props => (props.disabled ? "top: 50%" : "")};
-  ${props => (props.disabled ? "left: 50%" : "")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0.3em;
-  padding-bottom: 0.1em;
-  padding-left: 0.6em;
-  padding-right: 0.6em;
-  background: none;
-  appearance: none;
-  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
-  font-weight: 700;
-  color: ${props =>
-    props.disabled ? "var(--color_accent)" : "var(--color_dark)"};
-  border: 1px solid;
-  border-color: ${props =>
-    props.disabled ? "var(--color_accent)" : "var(--color_dark)"};
-  background-color: var(--bg_white);
-  text-transform: uppercase;
-  transform: ${props =>
-    props.disabled
-      ? "translate(-50%, -50%) scale(1.5) rotate(-15deg)"
-      : "perspective(1px) translateZ(0)"};
-  overflow: hidden;
-  line-height: 1;
+  ${StyledButton}
 
   ${mq.s`
     margin-top: auto;
     margin-left: auto;
   `}
-
-  ::before {
-    ${props => (props.disabled ? "" : "content: ''")};
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg_main);
-    transform: scaleX(0) skewX(-45deg);
-    transition-property: transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-  }
-
-  :hover::before {
-    transform: scaleX(1.5) skewX(-45deg);
-  }
 `;
 
 const Card = ({ details, addToOrder, index }) => {

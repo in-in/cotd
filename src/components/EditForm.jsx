@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
+import StyledButton from "./Button";
 import { breakpoints, mq } from "../helpers";
 
 const Form = styled.div`
@@ -62,10 +63,7 @@ const Textarea = styled(StyledInput)`
 `;
 
 const Button = styled.button`
-  background-color: var(--bg_white);
-  appearance: none;
-  border: 1px solid;
-  cursor: pointer;
+  ${StyledButton}
 
   ${mq.l`
     width: 100%;
