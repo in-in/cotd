@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Container from "./Container";
-import Header from "./header/Header";
+import Header from "./Header/Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import Card from "./Card";
