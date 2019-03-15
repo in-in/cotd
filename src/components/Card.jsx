@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { between } from "polished";
-import DefaultButton from "./DefaultButton";
+import ButtonDefault from "./ButtonDefault";
 import { formatPrice, breakpoints, mq, imagePath } from "../helpers";
 
 const StyledCard = styled.li`
@@ -109,7 +109,7 @@ const Picture = styled.picture`
   }
 `;
 
-const Button = styled(DefaultButton)`
+const Button = styled(ButtonDefault)`
   ${mq.s`
     margin-top: auto;
     margin-left: auto;

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import DefaultButton from "./DefaultButton";
+import ButtonDefault from "./ButtonDefault";
 import { Form, Input, Select, Textarea } from "./FormDefault";
 import { mq } from "../helpers";
 
-const Button = styled(DefaultButton)`
+const Button = styled(ButtonDefault)`
   ${mq.l`
     width: 100%;
   `}

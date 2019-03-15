@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const DefaultButton = styled.button.attrs({
+const ButtonDefault = styled.button.attrs({
   type: "button"
 })`
   position: ${props => (props.disabled ? "absolute" : "relative")};
@@ -51,4 +51,4 @@ const DefaultButton = styled.button.attrs({
   }
 `;
 
-export default DefaultButton;
+export default ButtonDefault;
