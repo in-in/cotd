@@ -9,10 +9,7 @@ const ButtonDefault = styled.button.attrs({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0.3em;
-  padding-bottom: 0.1em;
-  padding-left: 0.6em;
-  padding-right: 0.6em;
+  padding: 0.3em 0.6em;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
   font-weight: 700;
   text-transform: uppercase;
@@ -28,7 +25,7 @@ const ButtonDefault = styled.button.attrs({
       ? "translate(-50%, -50%) scale(1.5) rotate(-15deg)"
       : "perspective(1px) translateZ(0)"};
   overflow: hidden;
-  line-height: 1;
+  line-height: 1.3;
 
   ::before {
     ${props => (props.disabled ? "" : "content: ''")};
