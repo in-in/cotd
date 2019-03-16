@@ -2,11 +2,10 @@ import styled from "styled-components";
 import { between } from "polished";
 import { breakpoints, mq } from "../helpers";
 
-export const Form = styled.div`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
-  border: 1px solid;
   font-size: ${between(
     "16px",
     "20px",
@@ -28,7 +27,10 @@ const StyledInput = styled.input`
   padding: 0.5em;
   box-sizing: border-box;
   background-color: var(--bg_white);
-  border: 1px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-bottom: 0;
   color: var(--color_dark);
   font-size: inherit;
 
@@ -38,6 +40,10 @@ const StyledInput = styled.input`
 
   ${mq.l`
     width: 25%;
+
+    &:nth-child(-n+3) {
+      border-right: 0;
+    }
   `}
 `;
 

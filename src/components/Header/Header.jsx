@@ -33,7 +33,7 @@ const TitleCenter = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  width: 0.7em;
+  width: 0.8em;
 `;
 
 const StyledLogo = styled(Logo)`
