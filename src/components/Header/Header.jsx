@@ -63,7 +63,7 @@ const Tagline = styled.h3`
     `${breakpoints.xs}px`,
     `${breakpoints.xxl}px`
   )};
-  font-weight: 200;
+  font-weight: 400;
   text-transform: uppercase;
   line-height: 1.3;
   color: var(--color_accent);

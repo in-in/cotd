@@ -31,7 +31,7 @@ const Item = styled.li`
 
 const Count = styled.span`
   margin-right: 1em;
-  font-weight: 600;
+  font-weight: 700;
 `;
 
 const Price = styled.span`

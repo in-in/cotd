@@ -68,7 +68,7 @@ const Name = styled.h3`
 const Price = styled.span`
   max-width: 25%;
   font-size: 0.8em;
-  font-weight: 200;
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

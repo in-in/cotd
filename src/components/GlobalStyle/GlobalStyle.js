@@ -1,21 +1,31 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
-import SourceSerifVariableRoman from "./fonts/SourceSerifVariable-Roman.ttf.woff2";
-import SourceSansVariableRoman from "./fonts/SourceSansVariable-Roman.ttf.woff2";
+import sourceSerifPro700 from "./fonts/source-serif-pro-v6-latin-700.woff2";
+import sourceSansPro400 from "./fonts/source-sans-pro-v11-latin-regular.woff2";
+import sourceSansPro700 from "./fonts/source-sans-pro-v11-latin-700.woff2";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize};
 
   @font-face {
     font-family: 'Source Serif Pro';
-    font-variation-settings: "wght" 200 900;
-    src: url(${SourceSerifVariableRoman}) format('woff2-variations')
+    font-style: normal;
+    font-weight: 700;
+    src: url(${sourceSerifPro700}) format('woff2')
   }
 
   @font-face {
     font-family: 'Source Sans Pro';
-    font-variation-settings: "wght" 200 900;
-    src: url(${SourceSansVariableRoman}) format('woff2-variations')
+    font-style: normal;
+    font-weight: 400;
+    src: url(${sourceSansPro400}) format('woff2')
+  }
+
+  @font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(${sourceSansPro700}) format('woff2')
   }
 
   :root {
