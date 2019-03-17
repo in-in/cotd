@@ -29,7 +29,7 @@ const StyledContainer = styled.main`
 const ContainerItem = styled.section`
   max-height: calc(100vh - 5em);
   padding: 1em;
-  border: 0.5em double var(--color_dark);
+  border: 0.5em double ${props => props.theme.primary.blackRaisin};
   overflow-x: hidden;
   background-color: rgba(244, 244, 244, 0.8);
 `;

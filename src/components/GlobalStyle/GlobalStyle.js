@@ -28,26 +28,19 @@ const GlobalStyle = createGlobalStyle`
     src: url(${sourceSansPro700}) format('woff2')
   }
 
-  :root {
-    --color_dark: #222;
-    --color_accent: #e31b18;
-    --bg_white: #f4f4f4;
-    --bg_main: #76d4d6;
-  }
-
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
-    color: var(--color_dark);
+    color: ${props => props.theme.primary.blackRaisin};
     background-image:
       repeating-linear-gradient(
         -45deg,
-        var(--bg_white),
-        var(--bg_white) 3em,
-        var(--bg_main) 3em,
-        var(--bg_main) 7em)
+        ${props => props.theme.primary.whiteSmoke},
+        ${props => props.theme.primary.whiteSmoke} 3em,
+        ${props => props.theme.primary.blueMiddle} 3em,
+        ${props => props.theme.primary.blueMiddle} 7em)
   }
 
   h1,

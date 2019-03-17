@@ -15,11 +15,15 @@ const ButtonDefault = styled.button.attrs({
   text-transform: uppercase;
   appearance: none;
   color: ${props =>
-    props.disabled ? "var(--color_accent)" : "var(--color_dark)"};
-  background-color: var(--bg_white);
+    props.disabled
+      ? `${props.theme.primary.redVivid}`
+      : `${props.theme.primary.blackRaisin}`};
+  background-color: ${props => props.theme.primary.whiteSmoke};
   border: 1px solid;
   border-color: ${props =>
-    props.disabled ? "var(--color_accent)" : "var(--color_dark)"};
+    props.disabled
+      ? `${props.theme.primary.redVivid}`
+      : `${props.theme.primary.blackRaisin}`};
   transform: ${props =>
     props.disabled
       ? "translate(-50%, -50%) scale(1.5) rotate(-15deg)"
@@ -35,7 +39,7 @@ const ButtonDefault = styled.button.attrs({
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--bg_main);
+    background: ${props => props.theme.primary.blueMiddle};
     transform: scaleX(0) skewX(-45deg);
     transition-property: transform;
     transition-duration: 0.3s;

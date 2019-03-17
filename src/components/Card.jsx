@@ -16,8 +16,8 @@ const StyledCard = styled.li`
     `${breakpoints.xs}px`,
     `${breakpoints.s}px`
   )};
-  border-bottom: 2px solid var(--color_dark);
-  border-top: 1px solid var(--color_dark);
+  border-bottom: 2px solid ${props => props.theme.primary.blackRaisin};
+  border-top: 1px solid ${props => props.theme.primary.blackRaisin};
 
   :last-child {
     margin-bottom: 0;

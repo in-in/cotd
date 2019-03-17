@@ -26,16 +26,16 @@ export const Form = styled.form`
 const StyledInput = styled.input`
   padding: 0.5em;
   box-sizing: border-box;
-  background-color: var(--bg_white);
+  background-color: ${props => props.theme.primary.whiteSmoke};
   border-top: 1px solid;
   border-right: 1px solid;
   border-left: 1px solid;
   border-bottom: 0;
-  color: var(--color_dark);
+  color: ${props => props.theme.primary.blackRaisin};
   font-size: inherit;
 
   :focus {
-    background-color: #d8f3f3;
+    background-color: ${props => props.theme.shades.blueMiddle30};
   }
 
   ${mq.l`

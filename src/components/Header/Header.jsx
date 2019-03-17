@@ -26,7 +26,7 @@ const Title = styled.h1`
   line-height: 1.3;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color_dark);
+  color: ${props => props.theme.primary.blackRaisin};
 `;
 
 const TitleCenter = styled.div`
@@ -38,7 +38,7 @@ const TitleCenter = styled.div`
 
 const StyledLogo = styled(Logo)`
   width: 100%;
-  fill: var(--color_dark);
+  fill: ${props => props.theme.primary.blackRaisin};
 `;
 
 const TitleSideText = styled.span`
@@ -47,10 +47,10 @@ const TitleSideText = styled.span`
   box-sizing: border-box;
   width: 50%;
   ${props => (props.right ? "padding-left: 0.3em" : "padding-right: 0.3em")};
-  font-size: 0.15em;
+  font-size: 0.16em;
   text-align: center;
   letter-spacing: normal;
-  color: var(--color_accent);
+  color: ${props => props.theme.primary.redVivid};
 `;
 
 const Tagline = styled.h3`
@@ -66,7 +66,7 @@ const Tagline = styled.h3`
   font-weight: 400;
   text-transform: uppercase;
   line-height: 1.3;
-  color: var(--color_accent);
+  color: ${props => props.theme.primary.redVivid};
 
   ::before,
   ::after {
@@ -74,8 +74,8 @@ const Tagline = styled.h3`
     width: 1em;
     height: 0.1em;
     margin-top: -0.1em;
-    border-top: 0.05em solid var(--color_dark);
-    border-bottom: 0.05em solid var(--color_dark);
+    border-top: 0.05em solid ${props => props.theme.primary.blackRaisin};
+    border-bottom: 0.05em solid ${props => props.theme.primary.blackRaisin};
   }
 `;
 

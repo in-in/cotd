@@ -61,7 +61,7 @@ const Button = styled.button`
   border: 0;
   cursor: pointer;
   font-weight: 700;
-  color: var(--color_accent);
+  color: ${props => props.theme.primary.redVivid};
 
   ${Item}:hover & {
     display: block;
