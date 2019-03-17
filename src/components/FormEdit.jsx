@@ -32,9 +32,9 @@ const FormEdit = ({ fish, updateFish, deleteFish, itemID }) => {
       <Input placeholder="Price" value={price} onChange={handleChange} />
       <Input placeholder="Image" value={image} onChange={handleChange} />
 
-      <Select name="status" onChange={handleChange} value={available}>
-        <option value="available">Fresh!</option>
-        <option value="unavailable">Sold Out!</option>
+      <Select name="available" onChange={handleChange} value={available}>
+        <option value>Fresh!</option>
+        <option value="">Sold Out!</option>
       </Select>
 
       <Textarea
@@ -51,7 +51,7 @@ const FormEdit = ({ fish, updateFish, deleteFish, itemID }) => {
 
 FormEdit.propTypes = {
   fish: PropTypes.shape({
-    available: PropTypes.bool,
+    available: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     desc: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string,
