@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import FormAdd from "./FormAdd";
 import FormEdit from "./FormEdit";
 import Title from "./Title";
+import ButtonDefault from "./ButtonDefault";
 
 const Inventory = ({
   addFish,
@@ -13,6 +14,7 @@ const Inventory = ({
 }) => (
   <div className="inventory">
     <Title>Inventory</Title>
+
     {Object.keys(fishes).map(key => (
       <FormEdit
         fish={fishes[key]}
@@ -24,9 +26,8 @@ const Inventory = ({
     ))}
 
     <FormAdd addFish={addFish} />
-    <button type="button" onClick={loadSampleFishes}>
-      Load Sample
-    </button>
+
+    <ButtonDefault onClick={loadSampleFishes}>Load Sample</ButtonDefault>
   </div>
 );
 
