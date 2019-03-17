@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import AddForm from "./AddForm";
+import FormAdd from "./FormAdd";
 import FormEdit from "./FormEdit";
 import Title from "./Title";
 
@@ -23,7 +23,7 @@ const Inventory = ({
       />
     ))}
 
-    <AddForm addFish={addFish} />
+    <FormAdd addFish={addFish} />
     <button type="button" onClick={loadSampleFishes}>
       Load Sample
     </button>

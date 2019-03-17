@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import ButtonDefault from "./ButtonDefault";
+import { Form, Input, Select, Textarea } from "./FormDefault";
+import { mq } from "../helpers";
 
-const AddForm = ({ addFish }) => {
+const FormAdd = ({ addFish }) => {
   const nameRef = React.createRef();
   const priceRef = React.createRef();
   const statusRef = React.createRef();
@@ -21,23 +25,29 @@ const AddForm = ({ addFish }) => {
     e.currentTarget.reset();
   };
 
+  const Button = styled(ButtonDefault)`
+    ${mq.l`
+    width: 100%;
+  `}
+  `;
+
   return (
-    <form onSubmit={createFish} className="fish-edit">
-      <input name="name" ref={nameRef} type="text" placeholder="Name" />
-      <input name="price" ref={priceRef} type="text" placeholder="Price" />
-      <select name="status" ref={statusRef}>
+    <Form onSubmit={createFish}>
+      <Input placeholder="Name" ref={nameRef} />
+      <Input placeholder="Price" ref={priceRef} />
+      <Input placeholder="Image" ref={imageRef} />
+      <Select name="status" ref={statusRef}>
         <option value="available">Fresh!</option>
         <option value="unavailable">Sold Out!</option>
-      </select>
-      <textarea name="desc" ref={descRef} placeholder="Desc" />
-      <input name="image" ref={imageRef} type="text" placeholder="Image" />
-      <button type="submit">Add Fish</button>
-    </form>
+      </Select>
+      <Textarea name="desc" ref={descRef} placeholder="Description" />
+      <Button type="submit">Add Fish</Button>
+    </Form>
   );
 };
 
-AddForm.propTypes = {
+FormAdd.propTypes = {
   addFish: PropTypes.func.isRequired
 };
 
-export default AddForm;
+export default FormAdd;
