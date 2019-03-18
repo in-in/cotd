@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import FormAdd from "./FormAdd";
 import FormEdit from "./FormEdit";
@@ -12,7 +12,7 @@ const Inventory = ({
   loadSampleFishes,
   fishes
 }) => (
-  <div className="inventory">
+  <Fragment>
     <Title>Inventory</Title>
 
     {Object.keys(fishes).map(key => (
@@ -28,7 +28,7 @@ const Inventory = ({
     <FormAdd addFish={addFish} />
 
     <ButtonDefault onClick={loadSampleFishes}>Load Sample</ButtonDefault>
-  </div>
+  </Fragment>
 );
 
 Inventory.propTypes = {
