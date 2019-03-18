@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components/macro";
 import { normalize } from "polished";
 import sourceSerifPro700 from "./fonts/source-serif-pro-v6-latin-700.woff2";
 import sourceSansPro400 from "./fonts/source-sans-pro-v11-latin-regular.woff2";

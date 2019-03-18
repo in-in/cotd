@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { between } from "polished";
 import ButtonDefault from "./ButtonDefault";
 import { formatPrice, breakpoints, mq, imagePath } from "../helpers";

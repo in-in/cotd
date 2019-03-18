@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components/macro";
 import StorePicker from "./StorePicker";
 import App from "./App";
 import NotFound from "./NotFound";
