@@ -105,7 +105,9 @@ const Order = ({ order, fishes, removeFromOrder }) => {
 
     if (!fish.available) {
       return (
-        <Item>Sorry {fish ? fish.name : "fish"} is no longer available</Item>
+        <Item key={key}>
+          Sorry {fish ? fish.name : "fish"} is no longer available
+        </Item>
       );
     }
     return (
