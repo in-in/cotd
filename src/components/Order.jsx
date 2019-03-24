@@ -75,7 +75,7 @@ const Total = styled.div`
   padding-bottom: 0.8em;
   font-size: ${between(
     "20px",
-    "24px",
+    "22px",
     `${breakpoints.xs}px`,
     `${breakpoints.xxl}px`
   )};
