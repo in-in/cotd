@@ -31,7 +31,7 @@ const ContainerItem = styled.section`
   padding: 1em;
   border: 0.5em double ${props => props.theme.primary.blackRaisin};
   overflow-x: hidden;
-  background-color: rgba(244, 244, 244, 0.8);
+  background-color: ${props => props.theme.shades.whiteSmokeTransparent80};
 `;
 
 const Menu = styled(ContainerItem)`

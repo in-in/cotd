@@ -1,4 +1,4 @@
-import { lighten } from "polished";
+import { lighten, transparentize } from "polished";
 
 const primary = {
   blackRaisin: "hsl(0, 0%, 13%)",
@@ -8,7 +8,8 @@ const primary = {
 };
 
 const shades = {
-  blueMiddle30: lighten(0.3, primary.blueMiddle)
+  blueMiddle30: lighten(0.3, primary.blueMiddle),
+  whiteSmokeTransparent80: transparentize(0.2, primary.whiteSmoke)
 };
 
 const theme = { primary, shades };

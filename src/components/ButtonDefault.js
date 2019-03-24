@@ -9,7 +9,7 @@ const ButtonDefault = styled.button.attrs({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3em 0.6em;
+  padding: 0.45em 0.6em;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
   font-weight: 700;
   text-transform: uppercase;
