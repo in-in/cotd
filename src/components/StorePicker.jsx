@@ -1,10 +1,32 @@
 import React from "react";
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
-import { getFunName } from "../helpers";
+import { getFunName, mq } from "../helpers";
+import Title from "./Title";
+import { Form, Input } from "./FormDefault";
+import ButtonDefault from "./ButtonDefault";
 
-const Title = styled.h2`
-  font-style: italic;
+const StyledForm = styled(Form)`
+  border: 1em solid transparent;
+  padding: 1em;
+  background-clip: padding-box;
+  background-color: ${props => props.theme.primary.whiteSmoke};
+
+  ${mq.l`
+    flex-direction: column;
+  `}
+`;
+
+const StyledInput = styled(Input)`
+  text-align: center;
+
+  ${mq.l`
+    width: 100%
+
+    &:nth-child(-n+3) {
+      border-right: 1px solid;
+    }
+  `}
 `;
 
 const StorePicker = props => {
@@ -16,20 +38,16 @@ const StorePicker = props => {
   };
 
   return (
-    <form className="store__picker" onSubmit={handleSubmit}>
-      <Title>Please Enter A Store</Title>
-      <input
-        type="text"
-        required
-        ref={textInput}
+    <StyledForm onSubmit={handleSubmit}>
+      <Title>Please Enter A Store Name</Title>
+      <StyledInput
         placeholder="Store Name"
-        className="store__input"
+        ref={textInput}
         defaultValue={getFunName()}
+        required
       />
-      <button type="submit" className="store__submit">
-        Visit Store →
-      </button>
-    </form>
+      <ButtonDefault type="submit">Visit Store</ButtonDefault>
+    </StyledForm>
   );
 };
 

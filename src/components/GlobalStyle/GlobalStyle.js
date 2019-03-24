@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Source Sans Pro", sans-serif;
