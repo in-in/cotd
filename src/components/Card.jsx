@@ -53,9 +53,10 @@ const Header = styled.div`
 
 const Content = styled.div`
   position: relative;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 2px;
+  overflow: hidden;
 `;
 
 const Name = styled.h3`
@@ -63,11 +64,14 @@ const Name = styled.h3`
   font-size: inherit;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Price = styled.span`
   max-width: 25%;
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
