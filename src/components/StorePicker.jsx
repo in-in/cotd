@@ -3,15 +3,9 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import { getFunName, mq } from "../helpers";
 import Title from "./Title";
+import Wrapper from "./Wrapper";
 import { Form, Input } from "./FormDefault";
 import ButtonDefault from "./ButtonDefault";
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
 
 const StyledForm = styled(Form)`
   max-width: 500px;
