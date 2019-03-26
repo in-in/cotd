@@ -23,6 +23,11 @@
       "dest": "/static/$1"
     },
     { "src": "/favicon.png", "dest": "/favicon.png" },
+    {
+      "src": "/images/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/images/$1"
+    },
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
     { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
