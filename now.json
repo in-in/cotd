@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "cotd",
-  "alias": "cotdz.now.sh",
+  "alias": "runcotd.now.sh",
   "builds": [
     {
       "src": "package.json",
@@ -9,6 +9,13 @@
       "config": { "distDir": "build" }
     }
   ],
+  "build": {
+    "env": {
+      "REACT_APP_FIREBASE_API_KEY": "@cotd_firebase_api_key",
+      "REACT_APP_FIREBASE_AUTH_DOMAIN": "@cotd_firebase_auth_domain",
+      "REACT_APP_FIREBASE_DATABASE_URL": "@cotd_firebase_database_url"
+    }
+  },
   "routes": [
     {
       "src": "/static/(.*)",
