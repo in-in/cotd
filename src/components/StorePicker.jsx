@@ -6,7 +6,15 @@ import Title from "./Title";
 import { Form, Input } from "./FormDefault";
 import ButtonDefault from "./ButtonDefault";
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
 const StyledForm = styled(Form)`
+  max-width: 500px;
   border: 1em solid transparent;
   padding: 1em;
   background-clip: padding-box;
@@ -38,16 +46,18 @@ const StorePicker = props => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <Title>Please Enter A Store Name</Title>
-      <StyledInput
-        placeholder="Store Name"
-        ref={textInput}
-        defaultValue={getFunName()}
-        required
-      />
-      <ButtonDefault type="submit">Visit Store</ButtonDefault>
-    </StyledForm>
+    <Wrapper>
+      <StyledForm onSubmit={handleSubmit}>
+        <Title>Please Enter A Store Name</Title>
+        <StyledInput
+          placeholder="Store Name"
+          ref={textInput}
+          defaultValue={getFunName()}
+          required
+        />
+        <ButtonDefault type="submit">Visit Store</ButtonDefault>
+      </StyledForm>
+    </Wrapper>
   );
 };
 
