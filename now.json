@@ -1,14 +1,9 @@
 {
   "version": 2,
   "name": "cotd",
-  "alias": "runcotd.now.sh",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
-    }
-  ],
+  "github": {
+    "silent": true
+  },
   "build": {
     "env": {
       "REACT_APP_FIREBASE_API_KEY": "@cotd_firebase_api_key",
@@ -18,31 +13,7 @@
   },
   "routes": [
     {
-      "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
-      "dest": "/static/$1"
-    },
-    { "src": "/favicon.png", "dest": "/favicon.png" },
-    {
-      "src": "/images/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
-      "dest": "/images/$1"
-    },
-    { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
-    { "src": "/manifest.json", "dest": "/manifest.json" },
-    { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
-    {
-      "src": "/service-worker.js",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/service-worker.js"
-    },
-    {
-      "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/index.html"
+      "src": "/.*"
     }
-  ],
-  "github": {
-    "silent": true
-  }
+  ]
 }
